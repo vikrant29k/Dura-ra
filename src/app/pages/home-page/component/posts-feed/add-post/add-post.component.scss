@@ -1,0 +1,26 @@
+.add-container{
+    width: inherit;
+  
+    margin: 2rem;
+    .title{
+        h2{
+            font-size: 2rem;
+        }
+    }
+    .description{
+        width: 25rem;
+       
+    }
+    .submit{
+        width: 100%;
+        text-align: right;
+     button{
+        background-color: rgb(9, 229, 9);
+        color: white;
+        font-size: 1.3rem;
+        }
+    }
+    .example-chip-list{
+        width: 22rem;
+    }
+}

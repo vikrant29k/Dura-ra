@@ -1,0 +1,59 @@
+<div class="add-container">
+    <!-- <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+        <input type = "text" name = "emailid" placeholder = "emailid" >
+        <br/>
+        <input type = "password" name = "passwd" placeholder = "passwd" >
+        <br/>
+        <input type = "submit" value = "submit">
+     </form> -->
+    <form [formGroup]="postdata" (ngSubmit)="onSubmit()" >
+    <!-- #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(posted.value)"> -->
+    <div class="title">
+        <h2>Add Post</h2>
+    </div>
+    <div class="content-title">
+        <ng-container>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label> 
+            <input matInput placeholder="Post Title" formControlName="title" >
+        </mat-form-field>
+    </ng-container>
+   
+    </div>
+    <div class="content-description">
+        <ng-container>
+        <mat-form-field class="description" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput  placeholder="Description..." formControlName="description" ></textarea>
+        </mat-form-field>
+    </ng-container>
+    </div>
+    <div class="content-tags">
+        <ng-container>
+            <mat-form-field class="example-chip-list" appearance="fill">
+                <mat-label>Tags</mat-label>
+                <mat-chip-grid #chipGrid aria-label="Enter Tags">
+                  <mat-chip-row *ngFor="let tag of tags"
+                                (removed)="remove(tag)"
+                                [editable]="true"
+                                (edited)="edit(tag, $event)" 
+                                 >
+                    {{tag.name}}
+                    <button matChipRemove [attr.aria-label]="'remove ' + tag">
+                      <mat-icon>cancel</mat-icon>
+                    </button>
+                  </mat-chip-row>
+                  <input placeholder="Add Tags..."
+                         [matChipInputFor]="chipGrid"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event,this)" formControlName="tagName" />
+                </mat-chip-grid>
+              </mat-form-field>
+    </ng-container>
+    </div>
+    <div class="submit" >
+        <button type="submit" mat-button>Post</button>
+    </div>
+</form>
+</div>  

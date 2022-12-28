@@ -1,0 +1,49 @@
+<div class="add-container">
+    <!-- <form #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(userlogin.value)" >
+        <input type = "text" name = "emailid" placeholder = "emailid" ngModel>
+        <br/>
+        <input type = "password" name = "passwd" placeholder = "passwd" ngModel>
+        <br/>
+        <input type = "submit" value = "submit">
+     </form> -->
+    <form>
+    <!-- #userlogin = "ngForm" (ngSubmit) = "onClickSubmit(posted.value)"> -->
+    <div class="title">
+        <h2>Add Post</h2>
+    </div>
+    <div class="content-title">
+        <ng-container>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder="Post Title" name="title" ngModel>
+        </mat-form-field>
+    </ng-container>
+   
+    </div>
+    <div class="content-description">
+        <ng-container>
+        <mat-form-field class="description" appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput  placeholder="Description..." name="description"
+            ngModel></textarea>
+        </mat-form-field>
+    </ng-container>
+    </div>
+    <div class="content-tags">
+        <ng-container>
+        <mat-form-field class="tags" appearance="fill">
+            <mat-label>Tags#</mat-label>
+            <textarea matInput  placeholder="#"
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="6" 
+            (cdkAutofill)=true name="tags" ngModel></textarea>
+        </mat-form-field>
+    </ng-container>
+    </div>
+    <div class="submit">
+        <button mat-button>Post</button>
+    </div>
+</form>
+</div>  
